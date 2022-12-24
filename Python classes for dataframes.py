@@ -66,3 +66,6 @@ stocked1.print_dataframe_after()
 print(stocked1.str_test('date'))
 stocked1.print_dataframe()
 stocked1.if_then('stock')
+
+stocked2 =mnp_dataframe(df)
+stocked2.grouped()
