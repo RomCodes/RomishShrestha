@@ -74,4 +74,6 @@ stocked1.if_then_multiple('stock')
 stocked2 =mnp_dataframe(df)
 stocked2.grouped()
 
+stocked1.if_then_multiple(col ='stock')
+
 
