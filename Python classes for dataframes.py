@@ -45,7 +45,11 @@ class dataframe_with_cols:
         return(self.dataframe[col].str[1:])
     
     def if_then(self, col):
-        conditional = self.dataframe[col].apply(lambda x: 1 if x =='A' else 0)
+        conditional = self.dataframe[col].apply(lambda x: 1 if x =='A' else 0 )
+        return(print(conditional))
+    
+    def if_then_multiple(self,col):
+        conditional =self.dataframe[col].apply(lambda x: np.where(x == 'A', 1, np.where(x =='AAMC',2,np.where(x == 'AAME',3,np.where(x =='ZX',10,4)))))
         return(print(conditional))
     
     def print_dataframe(self):
@@ -65,7 +69,9 @@ stocked1.out(stock_col='stock',date_col= 'date')
 stocked1.print_dataframe_after()
 print(stocked1.str_test('date'))
 stocked1.print_dataframe()
-stocked1.if_then('stock')
+stocked1.if_then_multiple('stock')
 
 stocked2 =mnp_dataframe(df)
 stocked2.grouped()
+
+
