@@ -77,5 +77,8 @@ stocked2.grouped()
 stocked1.if_then_multiple(col ='stock')
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> cac359fff15732f8d862bc0fdd4badd6f3b7b777
