@@ -84,6 +84,17 @@ print(df)
 
 
     
+stocked1 = dataframe_with_cols(df)
+stocked1.out(stock_col='stock',date_col= 'date')
+stocked1.print_dataframe_after()
+print(stocked1.str_test('date'))
+stocked1.print_dataframe()
+stocked1.if_then_multiple('stock')
+
+stocked2 =mnp_dataframe(df)
+stocked2.grouped()
+
+stocked1.if_then_multiple(col ='stock')
     
     
 
