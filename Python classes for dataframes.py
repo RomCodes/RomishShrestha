@@ -1,7 +1,6 @@
 
-if __name__ == "__main__":
-    import pandas as pd
-    import numpy as np
+import pandas as pd
+import numpy as np
 
 df = pd.read_csv(r"C:\Users\User\Documents\Pandas Practice\analyst_ratings_processed.csv")
 
@@ -58,20 +57,36 @@ class dataframe_with_cols:
     def date_format(self, col):
         return self.dataframe['date'].str[:10]
     
+
+
+class ChangeDataFrame():
+    def __init__(self, dataframe):
+        self.dataframe =dataframe
+    
+    def apply_if_statement(self, col_name):
+        return self.dataframe[col_name].apply(lambda x: x[5:] if x.startswith('ABC') else x[4:] if x.startswith('AB') else x)
+
+
+import pandas as pd
+
+list_ = ['ABC::1234545432', 'AB23423432']
+
+df =pd.DataFrame(data = list_,columns = ['Account'])
+
+
+modifier = ChangeDataFrame(df)
+df['modified'] =modifier.apply_if_statement(col_name= 'Account')
+
+
+
+df['mod'] = df['Account'].apply(lambda x: x[5:] if x.startswith('ABC') else x)
+print(df)
+
+
     
     
+    
 
 
-
-
-stocked1 = dataframe_with_cols(df)
-stocked1.out(stock_col='stock',date_col= 'date')
-stocked1.print_dataframe_after()
-print(stocked1.str_test('date'))
-stocked1.print_dataframe()
-stocked1.if_then_multiple('stock')
-
-stocked2 =mnp_dataframe(df)
-stocked2.grouped()
 
 
